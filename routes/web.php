@@ -24,11 +24,11 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('/dashbord', [HomeController::class, 'index'])->name('home');
+Route::get('/dashbord', [HomeController::class, 'index'])->middleware('auth')->name('home');
 
 //Profil Routes
 
-Route::prefix('/Profil')->group(function () {
+Route::middleware('auth')->prefix('/Profil')->group(function () {
 
     Route::get('/', [ProfileController::class, 'index'])->name('Profil');
     Route::put('/', [ProfileController::class, 'update'])->name('ProfilUpdate');
@@ -36,7 +36,7 @@ Route::prefix('/Profil')->group(function () {
 
 //Annonces Routes
 
-Route::prefix('Annonces')->group(function(){
+Route::middleware('auth')->prefix('Annonces')->group(function(){
 
     Route::get('/' ,  [AnnoncesController::class,'index'])->name('listOfAnnonces');
     Route::get('/create' , [AnnoncesController::class , 'create'])->name('CreateAnnonce');

@@ -24,7 +24,9 @@ return new class extends Migration
             $table->string('description');
             $table->float('prix');
             $table->string('photos');
-            $table->string('localisation');
+            $table->string('localisation')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

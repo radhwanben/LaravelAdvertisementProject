@@ -66,8 +66,16 @@
             <div class="col-md-12 mt-4 ">
                 <div class="px-4 py-2 border shadow-2 d-flex justify-content-between">
                     <div class="mtt" >
+                        @if(!empty(Auth::user()->avatar))
                             <img class="avatar" src="storage/{{Auth::user()->avatar}}" /> <h3>{{Auth::user()->name}}</h3>
-                            
+                        @else
+                        <svg width="185" height="60" viewBox="0 0 185 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="30" cy="30" r="28" stroke="#848484" stroke-width="4"></circle>
+                            <circle cx="30" cy="22.5" r="11.125" fill="#848484" stroke="#848484" stroke-width="4"></circle>
+                            <path d="M19.061 53.3462C16.5256 52.2376 14.2997 50.9673 12.6842 49.9105C16.2867 44.5851 22.6692 41 30 41C37.3308 41 43.7133 44.5851 47.3158 49.9105C45.7003 50.9673 43.4744 52.2376 40.939 53.3462C37.4834 54.8571 33.6062 56 30 56C26.3938 56 22.5166 54.8571 19.061 53.3462Z" fill="#848484" stroke="#848484" stroke-width="4"></path>
+                            <h3>{{Auth::user()->name}}</h3>
+                            </svg> 
+                        @endif()
                      </div>
                     <div class="inn" >
                         <button type="button" class="btn prf btn-outline-info" data-mdb-ripple-color="dark">Voir Mon Profile Public</button>
