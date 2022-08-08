@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Annonce extends Model
 {
@@ -19,7 +20,8 @@ class Annonce extends Model
         'description',
         'prix',
         'photos',
-        'localisation'
+        'localisation',
+        'user_id'
     ];
 
 

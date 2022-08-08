@@ -4,6 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\File;
+
 
 class AnnoncesRequest extends FormRequest
 {
@@ -25,14 +27,20 @@ class AnnoncesRequest extends FormRequest
      */
     public function rules()
     {
+        
         return [
             'name' => 'required|string|min:4',
             'reference' => 'required|string',
             'surface' => 'required|integer',
-            'terrainbati' => 'required|string',
-            'titre' => 'required|string|min:4',
+            'file' => ['required', File::types(['pdf', 'docx'])],
+            'terrainbati' => 'required|array',
+            'titre' => 'required|string',
             'description' => 'required|string' ,
             'prix' =>'required|regex:/^\d+(\.\d{1,2})?$/' ,
+            'photos'=>'required|array',
+            'photos.*'=>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+
 
         ];
     }

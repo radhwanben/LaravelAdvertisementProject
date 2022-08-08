@@ -201,31 +201,31 @@
                      </div>
                      <select name="terrainbati[]" class="form-select mb-4" aria-label="Default select example">
                         <option selected>Terrain bàti</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="One">One</option>
+                        <option value="Two">Two</option>
+                        <option value="Thre3e">Thre3e</option>
                      </select>
                      <select name="terrainbati[]" class="form-select mb-4" aria-label="Default select example">
-                        <option selected>Terrain bàti</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                     <option selected>Terrain bàti</option>
+                        <option value="One">One</option>
+                        <option value="Two">Two</option>
+                        <option value="Thre3e">Thre3e</option>
                      </select>
                      <select name="terrainbati[]" class="form-select mb-4" aria-label="Default select example">
-                        <option selected>Terrain bàti</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                     <option selected>Terrain bàti</option>
+                        <option value="One">One</option>
+                        <option value="Two">Two</option>
+                        <option value="Thre3e">Thre3e</option>
                      </select>
                      <select name="terrainbati[]" class="form-select mb-4" aria-label="Default select example">
-                        <option selected>Terrain bàti</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                     <option selected>Terrain bàti</option>
+                        <option value="One">One</option>
+                        <option value="Two">Two</option>
+                        <option value="Thre3e">Thre3e</option>
                      </select>
                      
                      <div class="form-outline mb-4">
-                       <input class="form-control" name="file" type="file" id="formFileMultiple" multiple />
+                       <input class="form-control" name="file" type="file" id="formFileMultiple"  />
                     </div>
                     <p class="title2  mt">Ajouter le titre et la description</p>
                     <div class="form-outline mb-4">
@@ -240,7 +240,17 @@
                   
             </div>
             <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
+            <div class="col-md-4">
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            </div>
                
         </div>
         <div class="px-3">
@@ -268,9 +278,9 @@
               <p class="title2 mt">Ajouter ou ajoutez des photos</p>
                 <div class="w">   
                   <div class="upload">
-                      <img src="cam.png" width="100" height="100">
+                      <img src="/images/cam.png" width="100" height="100">
                       <div class="round">
-                          <input type="file" name="photos[]" id="upload_file" onchange="getImagePreview(event) ">
+                          <input type="file" name="photos[]" id="upload_file" onchange="getImagePreview(event) " multiple>
                           <i class="fas fa-plus text-white"></i>
                       </div>
                   </div>
