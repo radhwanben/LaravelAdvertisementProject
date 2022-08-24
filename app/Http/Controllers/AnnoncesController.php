@@ -40,19 +40,10 @@ class AnnoncesController extends Controller
     public function store(AnnoncesRequest $validator , AnnonceStoreService $annoncerequest)
     {
 
+
         
-       $annonce= $annoncerequest->AnnonceStore(
-        $validator->name,
-        $validator->reference,
-        $validator->surface,
-        $validator->terrainbati,
-        $validator->file,
-        $validator->titre,
-        $validator->description,
-        $validator->prix,
-        $validator->photos,
-        $localisation ="london",
-        $user_id =Auth::user()->id );
+       $annonce= $annoncerequest->AnnonceStore($validator->all());
+
 
         return redirect()->route('listOfAnnonces')->with('success' ,"annonce created succufuly") ;
 

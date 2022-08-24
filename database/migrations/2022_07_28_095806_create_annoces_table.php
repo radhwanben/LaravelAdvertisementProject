@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string("reference");
             $table->float('surface');
-            $table->string('terrainbati');
+            $table->json('terrainbati');
             $table->string('file');
             $table->string('titre');
             $table->string('description');

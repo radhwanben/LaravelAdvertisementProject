@@ -84,7 +84,7 @@
         <!-- Left links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="btn btn-primary green shadow-none" style="background-color: green ;" href="#!" role="button">
+            <a class="btn btn-primary green shadow-none" style="background-color: green ;" href="{{route('CreateAnnonce')}}" role="button">
                 <i class="fas fa-plus me-2"></i>
                 Déposer un terrain
               </a>
@@ -125,7 +125,7 @@
                     </ul>
                 </li>
                <li class="mx-2 nav-item diplay-block">
-                    <a href="" class=" nav-link fw-bolder text-success">Prix</a>
+                    <a href="{{route('plans')}}" class=" nav-link fw-bolder text-success">Prix</a>
                 </li>
                 <li class="mx-2 nav-item diplay-block">
                     <a href="{{ route('login') }}" class="nav-link fw-bolder"><i class="far fa-user-circle"></i> Connexion</a>

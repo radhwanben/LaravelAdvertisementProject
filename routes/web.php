@@ -22,6 +22,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/plans', function () {
+    return view('plans');
+})->name('plans');
+
+
 Auth::routes(['verify' => true]);
 
 Route::get('/dashbord', [HomeController::class, 'index'])->middleware('auth')->name('home');

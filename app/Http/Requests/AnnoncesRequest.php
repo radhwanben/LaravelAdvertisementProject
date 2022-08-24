@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\File;
+use Illuminate\Foundation\Http\FormRequest;
 
 
 class AnnoncesRequest extends FormRequest
@@ -39,7 +40,8 @@ class AnnoncesRequest extends FormRequest
             'prix' =>'required|regex:/^\d+(\.\d{1,2})?$/' ,
             'photos'=>'required|array',
             'photos.*'=>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
+            'localisation' =>'required',
+            'user_id' => 'required'
 
 
         ];

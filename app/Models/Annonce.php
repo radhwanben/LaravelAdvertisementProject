@@ -10,6 +10,12 @@ class Annonce extends Model
 {
     use HasFactory;
 
+    protected  $table='annoces';
+
+    protected $casts = [
+        'terrainbati' => 'array'
+    ];
+
     protected $fillable=[
         'name',
         'reference',
@@ -23,6 +29,7 @@ class Annonce extends Model
         'localisation',
         'user_id'
     ];
+
 
 
 

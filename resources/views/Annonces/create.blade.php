@@ -309,8 +309,9 @@
 
         <iframe class="px-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6789338.256963639!2d14.053334911280995!3d33.80956279065046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x125595448316a4e1%3A0x3a84333aaa019bef!2z2KrZiNmG2LPigI4!5e0!3m2!1sar!2stn!4v1654156231065!5m2!1sar!2stn" width="full" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-
       <div class="buttons p-3 mt-3 d-flex flex-row-reverse">
+      <input type="hidden" name="localisation" value="london">
+      <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
 
         <input type="submit" class="btn shadow-none modif" value="Valider les modifications" />
         <a  href="{{route('listOfAnnonces')}}" class="btn shadow-none annuler">Annuler</a>
